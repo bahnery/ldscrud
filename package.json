@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pretest": "knex migrate:latest",
     "test": "jest",
+    "posttest": "knex migrate:rollback --all",
     "start": "node ./src/app.js",
     "dev": "nodemon ./src/app.js"
   },
